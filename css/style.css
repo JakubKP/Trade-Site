@@ -1,0 +1,911 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --darkest: #141722;
+    --darker: #1a1d29;
+    --dark: #272b38;
+    --lightest: #2f3445;
+
+}
+
+/* header section styles */
+
+body {
+    font-family: 'Oswald', sans-serif;
+    background-color: var(--darkest);
+    overflow: hidden;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    font-size: 22px;
+    height: 100%;
+}
+
+header.login {
+    position: fixed;
+    height: 100px;
+    width: 100%;
+    background-color: var(--dark);
+    color: white;
+    z-index: 999;
+}
+
+section.login {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    height: 100%;
+}
+header.logged {
+    position: fixed;
+    height: 100px;
+    width: 100%;
+    background-color: var(--dark);
+    color: white;
+    z-index: 999;
+}
+
+section.logged {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    height: 100%;
+}
+div.logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 10%;
+    height: 100%;
+}
+
+div.logo a {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+div.logo img {
+    width: 70px;
+}
+
+
+nav.login {
+    width: 30%;
+    height: 100%;
+}
+
+nav.login ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+}
+
+nav.logged {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 100%;
+}
+
+nav.logged ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+}
+
+nav.login ul li {
+    height: 100%;
+    flex-basis: 200px;
+    border-left:  2px solid var(--darkest);
+    transition: .3s;
+}
+
+nav.login ul li:hover {
+    background-color: var(--darkest);
+}
+
+nav.login ul li:last-child {
+    border-right:  2px solid var(--darkest);
+}
+
+nav.login ul li a {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+nav.logged ul li {
+    height: 100%;
+    flex-basis: 180px;
+    border-left: 2px solid var(--darkest);
+    transition: .3s;
+}
+
+nav.logged ul li:hover {
+    background-color: var(--darkest);
+}
+nav.logged ul li:last-child {
+    height: 100%;
+    flex-basis: 15%;
+    border-right: 2px solid var(--darkest);
+}
+
+nav.logged ul li a {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+/* main section */
+
+main {
+    position: relative;
+    height: 90vh;
+}
+div.chat form {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main div.chat {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    top: 100px;
+    left: 0;
+    width: 400px;
+    height: calc(100vh - 100px);
+    background-color: var(--lightest);
+    z-index: 999;
+    transition: .3s;
+}
+
+div.chat .notlogged {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 100px;
+    background-color: var(--darkest);
+    z-index: 1000;
+    border-radius: 10px;
+    color: white;
+    font-size: 24px;
+}
+
+#chatbox {
+    overflow: hidden;
+    height: 80%;
+    width: 90%;
+    background-color: var(--darker);
+    border-radius: 10px;
+}
+
+#usermsg {
+    background-color: var(--darker);
+    border: 2px solid var(--darkest);
+    border-radius: 10px;
+    height: 100px;
+}
+
+#submitmsg {
+    background-color: var(--darker);
+    border: 2px solid var(--darkest);
+    border-radius: 10px;
+    padding: 40px 30px;
+    cursor: pointer;
+}
+
+textarea {
+    font-size: 20px;
+    width: 250px;
+    resize: none;
+    color: white;
+    overflow: hidden;
+}
+
+main div.chatbtn {
+    position: fixed;
+    left: 400px;
+    bottom: 0;
+    width: 50px;
+    height: 50px;
+    background-color: var(--lightest);
+    border-radius: 0 10px 10px 0;
+    transition: .3s;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+div.chatbtn i {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+}
+
+div.login,
+.exchangepanel {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    left: 420px;
+    top: 120px;
+    width: 1300px;
+    height: 760px;
+    background-color: var(--dark);
+    border-radius: 10px;
+}
+
+.prices {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 98%;
+    height: 20%;
+    background-color: var(--lightest);
+    border-radius: 10px;
+    color: white;
+    font-size: 20px;
+}
+
+.prices .btc,
+.prices .eth,
+.prices .hex,
+.prices .usdc {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    flex-basis: 15%;
+    height: 95%;
+    background-color: var(--dark);
+    border-radius: 10px;
+}
+
+.prices img {
+    width: 80px;
+}
+
+.prices .eth img {
+    width: 50px;
+}
+
+.notlogged {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 75%;
+    width: 98%;
+    color: white;
+    font-size: 40px;
+}
+
+.dashboard,
+.exchangemenu {
+    width: 98%;
+    height: 580px;
+    background-color: var(--darker);
+    border-radius: 10px;
+}
+
+.chart,
+.chartexchange {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: space-around;
+    height: 100%;
+}
+
+.dashboard .info,
+.chartexchange .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 500px;
+    height: 500px;
+    background-color: var(--dark);
+    border-radius: 10px;
+}
+
+.info div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 90%;
+    flex-basis: 40%;
+    color: white;
+    font-size: 24px;
+}
+
+.info div img {
+    width: 50px;
+}
+
+.info div:nth-child(3) div img {
+    width: 40px;
+} 
+
+.percentinfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    width: 200px;
+    height: 500px;
+}
+
+#cryptovalue {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 400px;
+    height: 100px;
+    font-size: 24px;
+    color: white;
+}
+
+.percentinfo div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-basis: 20%;
+    width: 90%;
+    color: white;
+    font-size: 20px;
+}
+
+
+.percentinfo div.box {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+}
+
+.percentinfo div:nth-of-type(2) .box {
+    background-color: yellow;
+}
+.percentinfo div:nth-of-type(3) .box {
+    background-color: black;
+}
+.percentinfo div:nth-of-type(4) .box {
+    background-color: pink;
+}
+.percentinfo div:nth-of-type(5) .box {
+    background-color: blue;
+}
+
+div.registerform,
+div.loginform {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 500px;
+    background-color: var(--dark);
+    border-radius: 10px;
+}
+
+div.loginform {
+    width: 400px;
+    height: 400px;
+}
+
+div.registerform form,
+div.loginform form  {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 600px;
+    height: 500px;
+    font-size: 24px;
+}
+div.registerform form div,
+div.loginform form div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+    height: calc(400px / 3);
+}
+
+div.registerform input,
+div.loginform input {
+    background-color: var(--darkest);
+    border: 2px solid var(--dark);
+    border-radius: 10px;
+    padding: 20px;
+    color: white;
+    font-size: 16px;
+}
+
+div.registerform input:focus,
+div.loginform input:focus {
+    outline: none;
+}
+
+div.registerform button,
+div.loginform button {
+    background-color: var(--darkest);
+    border: 2px solid var(--dark);
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    font-size: 24px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.username {
+    position: absolute;
+    right: 100px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+}
+
+div.just-validate-error-label {
+    font-size: 16px;
+}
+
+.alreadylogged {
+    font-size: 32px;
+    color: white;
+}
+
+.livecontent {
+    display: flex;
+    flex-direction: row;
+    background-color: var(--darkest);
+    width: 100%;
+    height: 100px;
+    border-bottom: 2px solid var(--lightest);
+    color: white;
+}
+
+.avatar {
+    position: relative;
+    width: 98px;
+    height: 98px;
+}
+
+.livemessage {
+    word-wrap: break-word;
+    width: 260px;
+    flex-basis: 260px; 
+    height: 98px;
+    overflow: hidden;
+}
+
+.namehour {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.avatar img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+.settings {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 500px;
+    background-color: var(--dark);
+    border-radius: 10px;
+}
+
+.settings form,
+.currentavatar {
+    width: 50%;
+}
+
+.currentavatar {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+.currentavatar img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    border-radius: 50%;
+}
+.settings form input {
+    border: 2px solid white;
+    border-radius: 10px;
+    background-color: var(--darker);
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.settings div {
+    font-size: 24px;
+    color: white;
+}
+
+.exchangemenu form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 500px;
+    background-color: var(--lightest);
+    width: 400px;
+    border-radius: 10px;
+    padding: 30px;
+    color: white;
+    font-size: 18px;
+}
+
+.exchangemenu form :where(input, select, button) {
+    width: 100%;
+    outline: none;
+    border: none;
+    background-color: var(--lightest);
+    color: white;
+}
+
+.exchangemenu form input {
+    height: 50px;
+    border: 2px solid var(--darkest);
+    padding: 0 15px;
+    font-size: 16px;
+    border-radius: 10px;
+    color: white;
+}
+.exchangemenu form input:focus {
+    border: 2px solid white;
+}
+
+.exchangemenu form .drop-list {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.drop-list .select-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    width: 115px;
+    border-radius: 5px;
+    border: 2px solid var(--darkest);
+}
+
+.drop-list .select-box img{
+    max-width: 30px;
+}
+
+.drop-list .select-box select {
+    width: auto;
+    height: 100%;
+    font-size: 16px;
+    margin: 0  -5px 0 5px;
+}
+.drop-list i {
+    cursor: pointer;
+    font-size: 24px;
+    margin-top: 30px;
+    color: var(--darkest);
+}
+
+form .exchange-rate {
+    text-align: center;
+    font-size: 18px;
+    margin: 20px 0 30px;
+}
+
+div.chartexchange form button {
+    height: 52px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: var(--darkest);
+    border-radius: 10px;
+}
+.amount {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.amount p {
+    flex-basis: 100%;
+}
+.amount input {
+    flex-basis: 70%;
+}
+.amount button {
+    flex-basis: 30%;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none; 
+}
+
+.roulette {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    left: 420px;
+    top: 120px;
+    width: 1480px;
+    height: 760px;
+    background-color: var(--dark);
+    border-radius: 10px;
+}
+
+div.roulettewheel,
+div.roulettehistory,
+div.roulettebets,
+div.placebet {
+    border-radius: 10px;
+    height: 120px;
+    width: 98%;
+    background-color: var(--darkest);
+}
+
+div.roulettewheel {
+    position: relative;
+    width: 93%;
+}
+
+#spinner {
+    height: 100%;
+    background-image: url("/php-site/roulette/images/numbers.png");
+    background-repeat: repeat-x;
+    background-position: 0;
+    transition: 9s cubic-bezier(0.35, 1, 0.71, 0.99);
+}
+
+#spinnermask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,0.6);
+}
+
+#spinnermask .timer {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100%;
+    color: white;
+    font-size: 24px;
+    text-align: center;
+    line-height: 120px;
+    font-weight: 300;
+}
+
+#roulettepointer {
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    background-color: red;
+    width: 1px;
+    height: 100%;
+    transform: translateX(-50%);
+}
+
+div.roulettehistory {
+    width: 95%;
+    height: 50px;
+}
+
+div.placebet {
+    height: 60px; 
+}
+
+div.roulettebets {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 500px;
+    color: white;
+}
+
+.roulettebets .redbet,
+.roulettebets .greenbet,
+.roulettebets .blackbet {
+    height: 95%;
+    width: 460px;
+    background-color: var(--lightest);
+    border-radius: 10px;
+}
+
+.roulettebets .redbet,
+.roulettebets .greenbet,
+.roulettebets .blackbet {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.betbutton {
+    height: 80px;
+    width: 90%;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+}
+
+.redbet .betbutton {
+background-color: #d45c4c;
+}
+
+.greenbet .betbutton {
+    background-color: #5cb46c;
+}
+
+.blackbet .betbutton {
+    background-color: #3c3c3c;
+}
+
+div.usertotalbet {
+    height: 50px;
+    width: 90%;
+    background-color: var(--darkest);
+    border-radius: 10px;
+}
+
+.usertotalbet div {
+    width: 240px;
+}
+
+p {
+    display: inline;
+}
+
+div.usersbets {
+    width: 90%;
+    height: 300px;
+    background-color: var(--darkest);
+    border-radius: 10px;
+}
+
+div.usertotalbet div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    font-size: 24px;
+    padding: 0 20px;
+}
+
+div.usertotalbet span {
+    text-align: end;
+    width: 200px;
+}
+
+div.usertotalbet img {
+    width: 35px;
+}
+
+div.placebet {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+div.placebet input {
+    height: 42px;
+    outline: none;
+    border: 1px solid black;
+    background-color: var(--lightest);
+    padding: 10px;
+    color: white;
+}
+
+div.placebet button {
+    border: none;
+    border-right: 2px solid var(--darkest);
+    background-color: var(--lightest);
+    width: 100px;
+    height: 40px;
+    cursor: pointer;
+    color: white;
+}
